@@ -1,6 +1,6 @@
 package no.ciber.service
 
-import no.ciber.domain.User
+import no.ciber.domain.AppUser
 
 /**
  * Created by bjerke.
@@ -8,7 +8,7 @@ import no.ciber.domain.User
 
 trait UserService{
 
-    fun getUserByEmail(email: String?): User?
+    fun getUserByEmail(email: String?): AppUser?
 
     fun hasUserWithEmail(email: String?) : Boolean
 

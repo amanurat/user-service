@@ -1,6 +1,6 @@
 package no.ciber.service.impl
 
-import no.ciber.domain.User
+import no.ciber.domain.AppUser
 import no.ciber.repository.UserRepository
 import no.ciber.service.UserService
 import org.springframework.beans.factory.annotation.Autowired
@@ -13,7 +13,7 @@ Service class UserServiceImpl : UserService {
 
     Autowired var userRepository: UserRepository? = null
 
-    override fun getUserByEmail(email: String?): User? {
+    override fun getUserByEmail(email: String?): AppUser? {
         return userRepository?.findByEmail(email)
     }
 

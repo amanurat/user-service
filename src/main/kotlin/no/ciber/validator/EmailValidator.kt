@@ -1,7 +1,7 @@
 package no.ciber.validator
 
 import no.ciber.Exception.DuplicateEmailException
-import no.ciber.domain.User
+import no.ciber.domain.AppUser
 import no.ciber.service.UserService
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.stereotype.Component
@@ -15,18 +15,18 @@ Component class EmailValidator : Validator {
     Autowired constructor(userService: UserService){ this.userService = userService }
 
     override fun supports(clazz: Class<*>): Boolean {
-        return clazz.equals(javaClass<User>())
+        return clazz.equals(javaClass<AppUser>())
     }
 
     override fun validate(target: Any?, errors: Errors?) {
         when (target) {
-            is User -> {
+            is AppUser -> {
                 validateEmail(target)
             }
         }
     }
 
-    private fun validateEmail(target: User) {
+    private fun validateEmail(target: AppUser) {
         if (userService.hasUserWithEmail(target.email)) {
             throw DuplicateEmailException("Email already exists")
         }

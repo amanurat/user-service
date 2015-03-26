@@ -10,7 +10,7 @@ Table(
                 UniqueConstraint(columnNames = * array( "email"))
         )
 )
-data public class User (
+data public class AppUser (
         Id GeneratedValue var id: String? = null,
         NotNull Length(max = 32) var email: String? = null,
         NotNull Length(max = 16) var firstname: String? = null,
