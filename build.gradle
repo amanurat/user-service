@@ -49,6 +49,7 @@ dependencies {
     compile('org.springframework.boot:spring-boot-starter-data-rest:1.2.2.RELEASE')
     compile('org.hibernate:hibernate-entitymanager:4.3.8.Final')
     compile('com.h2database:h2:1.4.186')
+    compile('postgresql:postgresql:9.1-901-1.jdbc4')
     compile('ch.qos.logback:logback-classic:0.9.26')
     compile('com.github.pukkaone:logback-gelf:1.1.6')
     compile('org.aspectj:aspectjweaver:1.8.5')
