@@ -1,9 +1,6 @@
 package no.ciber.domain
 
 import org.hibernate.validator.constraints.Length
-import org.springframework.data.mapping.model.AbstractPersistentProperty
-import java.util.ArrayList
-import java.util.UUID
 import javax.persistence.*
 import javax.validation.constraints.NotNull
 
@@ -18,5 +15,5 @@ data public class User (
         NotNull Length(max = 32) var email: String? = null,
         NotNull Length(max = 16) var firstname: String? = null,
         NotNull Length(max = 16)var lastname: String? = null,
-        var interests: ArrayList<String>? = null
+        ElementCollection var interests: MutableSet<Int>? = null
 )
