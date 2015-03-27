@@ -18,4 +18,4 @@
     <li><code>PUT</code>Update a specific user where {id} is the ID of the user</li>
 </ul>
 <h2>About this service</h2>
-<p>This service is made using Spring Boot and kotlin and is bundled with dependencies for h2 and postgresql.</p>
+<p>This service is made using Spring Boot and kotlin and is bundled with dependencies for h2 and postgresql. </p>
