@@ -63,3 +63,5 @@ task wrapper(type: Wrapper) {
 springBoot {
     mainClass = 'no.ciber.Application'
 }
+
+task stage(dependsOn: ['clean', 'installApp'])
