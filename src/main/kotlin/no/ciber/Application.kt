@@ -7,6 +7,7 @@ import org.springframework.boot.SpringApplication
 import org.springframework.boot.autoconfigure.SpringBootApplication
 import org.springframework.data.rest.core.event.ValidatingRepositoryEventListener
 import org.springframework.data.rest.webmvc.config.RepositoryRestMvcConfiguration
+import org.springframework.util.StringUtils
 import kotlin.platform.platformStatic
 
 SpringBootApplication
@@ -26,5 +27,10 @@ public open class Application : RepositoryRestMvcConfiguration() {
 }
 
 public fun main(args: Array<String>) {
+    var webPort = System.getenv("PORT")
+    if(StringUtils.isEmpty(webPort)){
+        webPort="8080"
+    }
+    System.setProperty("server.port", webPort)
     Application.main(args)
 }
