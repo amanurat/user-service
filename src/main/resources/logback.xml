@@ -16,9 +16,9 @@
     <logger name="org.springframework.core.env.MutablePropertySources" level="WARN"></logger>
     <logger name="org.hibernate.type.BasicTypeRegistry" level="WARN"></logger>
 
-    <root level="DEBUG">
+    <root level="INFO">
         <appender-ref ref="CONSOLE"/>
-        <appender-ref ref="GRAYLOG2"/>
+        <!--<appender-ref ref="GRAYLOG2"/>-->
     </root>
 
 </configuration>
