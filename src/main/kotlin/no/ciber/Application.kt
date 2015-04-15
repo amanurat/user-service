@@ -1,10 +1,12 @@
 package no.ciber
 
+import no.ciber.domain.AppUser
 import no.ciber.validator.EmailValidator
 import no.ciber.validator.ListValidator
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.boot.SpringApplication
 import org.springframework.boot.autoconfigure.SpringBootApplication
+import org.springframework.data.rest.core.config.RepositoryRestConfiguration
 import org.springframework.data.rest.core.event.ValidatingRepositoryEventListener
 import org.springframework.data.rest.webmvc.config.RepositoryRestMvcConfiguration
 import kotlin.platform.platformStatic
@@ -22,6 +24,10 @@ public open class Application : RepositoryRestMvcConfiguration() {
     override fun configureValidatingRepositoryEventListener(validatingListener: ValidatingRepositoryEventListener?) {
         validatingListener?.addValidator("beforeCreate", ListValidator(emailValidator))
         validatingListener?.addValidator("beforeSave", ListValidator(emailValidator))
+    }
+
+    override fun configureRepositoryRestConfiguration(config: RepositoryRestConfiguration){
+        config.exposeIdsFor(javaClass<AppUser>())
     }
 }
 
