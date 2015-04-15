@@ -11,7 +11,7 @@ Table(
         )
 )
 data public class AppUser (
-        Id GeneratedValue var id: String? = null,
+        Id GeneratedValue var id: Int? = null,
         NotNull Length(max = 32) var email: String? = null,
         NotNull Length(max = 16) var firstname: String? = null,
         NotNull Length(max = 16)var lastname: String? = null,
