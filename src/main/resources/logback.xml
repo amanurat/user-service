@@ -13,6 +13,8 @@
     </appender>
 
     <logger name="org.springframework.core.env.PropertySourcesPropertyResolver" level="WARN"></logger>
+    <logger name="org.springframework.core.env.MutablePropertySources" level="WARN"></logger>
+    <logger name="org.hibernate.type.BasicTypeRegistry" level="WARN"></logger>
 
     <root level="DEBUG">
         <appender-ref ref="CONSOLE"/>
