@@ -12,6 +12,8 @@
         <originHost>user-service</originHost>
     </appender>
 
+    <logger name="org.springframework.core.env.PropertySourcesPropertyResolver" level="WARN"></logger>
+
     <root level="DEBUG">
         <appender-ref ref="CONSOLE"/>
         <appender-ref ref="GRAYLOG2"/>
