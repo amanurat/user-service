@@ -27,7 +27,7 @@ Component class EmailValidator : Validator {
     }
 
     private fun validateEmail(target: AppUser) {
-        if (userService.hasUserWithEmail(target.email)) {
+        if (userService.hasUserWithEmail(target.email, target.id)) {
             throw DuplicateEmailException("Email already exists")
         }
     }

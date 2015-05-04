@@ -17,10 +17,11 @@ Service class UserServiceImpl : UserService {
         return userRepository?.findByEmail(email)
     }
 
-    override fun hasUserWithEmail(email: String?): Boolean {
-        if(getUserByEmail(email) != null) {
-            return true
+    override fun hasUserWithEmail(email: String?, id: Int?): Boolean {
+        val appUser = getUserByEmail(email)
+        if(appUser == null) {
+            return false
         }
-        return false
+        return appUser.id != id
     }
 }

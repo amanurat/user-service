@@ -10,6 +10,6 @@ trait UserService{
 
     fun getUserByEmail(email: String?): AppUser?
 
-    fun hasUserWithEmail(email: String?) : Boolean
+    fun hasUserWithEmail(email: String?, id: Int?) : Boolean
 
 }
